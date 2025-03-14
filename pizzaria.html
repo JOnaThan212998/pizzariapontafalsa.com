@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Ponta Falsa</title>
+    <style>
+        body {
+            background-image: url('pizza.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 50px auto;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 15px;
+            border: 3px solid black;
+        }
+        h1 {
+            color: red;
+            font-size: 36px;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .pizza {
+            background-color: white;
+            padding: 10px;
+            border: 2px solid black;
+            width: 200px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .pizza:hover {
+            background-color: yellow;
+        }
+        .descricao {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 0, 0.8);
+            border: 2px solid black;
+            font-weight: bold;
+        }
+        .compre {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+            border: 2px solid black;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .compre button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .compre button:hover {
+            background-color: green;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-top: 2px solid black;
+            font-weight: bold;
+        }
+        #mensagem {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: yellow;
+            border: 2px solid black;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pizzaria Ponta Falsa</h1>
+        <h2>Nosso Cardápio</h2>
+        <div class="menu">
+            <div class="pizza" onclick="mostrarDescricao('desc1')">🍕 Margherita</div>
+            <div class="descricao" id="desc1">Molho de tomate, mussarela e manjericão.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc2')">🍕 Calabresa</div>
+            <div class="descricao" id="desc2">Molho de tomate, mussarela, calabresa e cebola.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc3')">🍕 Portuguesa</div>
+            <div class="descricao" id="desc3">Presunto, mussarela, ovos, cebola e azeitonas.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc4')">🍕 Quatro Queijos</div>
+            <div class="descricao" id="desc4">Mussarela, provolone, gorgonzola e parmesão.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc5')">🍕 Frango com Catupiry</div>
+            <div class="descricao" id="desc5">Molho de tomate, frango desfiado e catupiry.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc6')">🍕 Peperoni</div>
+            <div class="descricao" id="desc6">Molho de tomate, mussarela e peperoni.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc7')">🍕 Vegetariana</div>
+            <div class="descricao" id="desc7">Mussarela, pimentão, tomate e cebola.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc8')">🍕 Mexicana</div>
+            <div class="descricao" id="desc8">Carne moída, pimenta jalapeño e cheddar.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc9')">🍕 Chocolate</div>
+            <div class="descricao" id="desc9">Chocolate ao leite derretido com granulado.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc10')">🍕 Camarão</div>
+            <div class="descricao" id="desc10">Molho de tomate, camarão, alho e mussarela.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc11')">🍕 Napolitana</div>
+            <div class="descricao" id="desc11">Molho de tomate, mussarela, tomate e orégano.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc12')">🍕 Bacon</div>
+            <div class="descricao" id="desc12">Molho de tomate, mussarela e bacon crocante.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc13')">🍕 Palmito</div>
+            <div class="descricao" id="desc13">Molho de tomate, mussarela e palmito.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc14')">🍕 Lombinho</div>
+            <div class="descricao" id="desc14">Molho de tomate, mussarela, lombinho e milho.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc15')">🍕 Atum</div>
+            <div class="descricao" id="desc15">Molho de tomate, atum e cebola.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc16')">🍕 Alho e Óleo</div>
+            <div class="descricao" id="desc16">Molho de tomate, mussarela, alho e azeite.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc17')">🍕 Rúcula com Tomate Seco</div>
+            <div class="descricao" id="desc17">Molho de tomate, mussarela, rúcula e tomate seco.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc18')">🍕 Strogonoff</div>
+            <div class="descricao" id="desc18">Molho de tomate, frango ao molho strogonoff.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc19')">🍕 Brócolis</div>
+            <div class="descricao" id="desc19">Molho de tomate, mussarela, brócolis e alho.</div>
+
+            <div class="pizza" onclick="mostrarDescricao('desc20')">🍕 Carne Seca</div>
+            <div class="descricao" id="desc20">Molho de tomate, carne seca, cebola e queijo coalho.</div>
+        </div>
+
+        <div class="compre">
+            <p style="color: red;">Compre Agora</p>
+            <button onclick="mostrarMensagem()">Fazer Pedido</button>
+        </div>
+        <div id="mensagem">Feito por Jonathan Pazzim Fragoso do ano 1C </div>
+    </div>
+    
+    <script>
+        function mostrarDescricao(id) {
+            let descricao = document.getElementById(id);
+            descricao.style.display = descricao.style.display === "block" ? "none" : "block";
+        }
+
+        function mostrarMensagem() {
+            document.getElementById("mensagem").style.display = "block";
+        }
+    </script>
+</body>
+</html>
